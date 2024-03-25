@@ -1,14 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { useNetInfo } from '@react-native-community/netinfo';
+import NoInternet from './src/screens/noInternetScreen';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const App = () => {
+  const { type, isConnected } = useNetInfo();
+  return <View style={styles.container}>{isConnected && <NoInternet />}</View>;
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -18,3 +15,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App;
