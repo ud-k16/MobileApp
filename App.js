@@ -1,19 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { useNetInfo } from '@react-native-community/netinfo';
-import NoInternet from './src/screens/noInternetScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import BottomNavigation from './src/navigation/bottomNavigation';
 
 const App = () => {
-  const { type, isConnected } = useNetInfo();
-  return <View style={styles.container}>{isConnected && <NoInternet />}</View>;
+  return (
+    <NavigationContainer>
+      <BottomNavigation />
+    </NavigationContainer>
+  );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const styles = StyleSheet.create({});
 
 export default App;
