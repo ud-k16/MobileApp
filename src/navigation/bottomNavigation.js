@@ -4,24 +4,36 @@ import NoInternet from '../screens/noInternetScreen';
 import { Entypo } from '@expo/vector-icons';
 import HomeScreen from '../screens/homeScreen';
 import Header from './header';
-import { Appbar } from 'react-native-paper';
+import { Constants } from '../constants/constants';
+
 const Tab = createBottomTabNavigator();
+
 const BottomNavigation = () => {
+  const screenOptions = (route) => ({
+    header: (props) => <Header {...props} />,
+    tabBarIcon: tabBarIcon(route),
+  });
+
+  const tabBarIcon = (route) => () => {
+    return route.name === Constants.screen.home ? (
+      <Entypo
+        name={Constants.icon.home}
+        size={24}
+        color={Constants.iconColor.black}
+      />
+    ) : (
+      <Entypo
+        name={Constants.icon.sample}
+        size={24}
+        color={Constants.iconColor.black}
+      />
+    );
+  };
+
   return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        header: (props) => <Header {...props} />,
-        tabBarIcon: () => {
-          return route.name === 'Cotton Home' ? (
-            <Entypo name="home" size={24} color="black" />
-          ) : (
-            <Entypo name="emoji-sad" size={24} color="black" />
-          );
-        },
-      })}
-    >
-      <Tab.Screen name="Cotton Home" component={HomeScreen} />
-      <Tab.Screen name="sample " component={NoInternet} />
+    <Tab.Navigator screenOptions={({ route }) => screenOptions(route)}>
+      <Tab.Screen name={Constants.screen.home} component={HomeScreen} />
+      <Tab.Screen name={Constants.screen.sample} component={NoInternet} />
     </Tab.Navigator>
   );
 };

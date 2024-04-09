@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native';
 import { Appbar } from 'react-native-paper';
+import { Constants } from '../constants/constants';
 
 const Header = ({ route, navigation }) => {
   return (
-    <Appbar.Header mode="center-aligned">
+    <Appbar.Header mode={Constants.headerMode}>
       <Appbar.Action
-        icon={'reorder-horizontal'}
+        icon={Constants.icon.menu}
         onPress={() => navigation.openDrawer()}
       />
       <Appbar.Content title={route.name} />

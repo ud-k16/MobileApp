@@ -1,18 +1,25 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { StyleSheet, View } from 'react-native';
-import HomeScreen from '../screens/homeScreen';
+import { StyleSheet } from 'react-native';
 import BottomNavigation from './bottomNavigation';
+import { Constants } from '../constants/constants';
+
 const Drawer = createDrawerNavigator();
+
 const DrawerNavigation = ({}) => {
+  const screenOptions = {
+    headerShown: false,
+    drawerItemStyle: { display: 'none' },
+  };
+
   return (
     <Drawer.Navigator
-      initialRouteName="Home"
-      screenOptions={() => ({
-        headerShown: false,
-        drawerItemStyle: { display: 'none' },
-      })}
+      initialRouteName={Constants.screen.drawerHome}
+      screenOptions={() => screenOptions}
     >
-      <Drawer.Screen name="Home" component={BottomNavigation} />
+      <Drawer.Screen
+        name={Constants.screen.drawerHome}
+        component={BottomNavigation}
+      />
     </Drawer.Navigator>
   );
 };
