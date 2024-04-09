@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomNavigation from './src/navigation/bottomNavigation';
+import DrawerNavigation from './src/navigation/drawerNavigation';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <BottomNavigation />
+      <DrawerNavigation>
+        <BottomNavigation />
+      </DrawerNavigation>
     </NavigationContainer>
   );
 };
