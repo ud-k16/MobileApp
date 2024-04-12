@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import NoInternet from '../screens/noInternetScreen';
-import { Entypo } from '@expo/vector-icons';
+import { Entypo, MaterialIcons } from '@expo/vector-icons';
 import HomeScreen from '../screens/homeScreen';
 import Header from './header';
 import { Constants } from '../constants/constants';
@@ -22,8 +22,8 @@ const BottomNavigation = () => {
         color={Constants.iconColor.black}
       />
     ) : (
-      <Entypo
-        name={Constants.icon.sample}
+      <MaterialIcons
+        name={Constants.icon.stores}
         size={24}
         color={Constants.iconColor.black}
       />
@@ -33,7 +33,7 @@ const BottomNavigation = () => {
   return (
     <Tab.Navigator screenOptions={({ route }) => screenOptions(route)}>
       <Tab.Screen name={Constants.screen.home} component={HomeScreen} />
-      <Tab.Screen name={Constants.screen.sample} component={NoInternet} />
+      <Tab.Screen name={Constants.screen.stores} component={NoInternet} />
     </Tab.Navigator>
   );
 };

@@ -4,13 +4,13 @@ export const Constants = Object.freeze({
   noInternet: 'No Internet',
   screen: {
     drawerHome: 'Home',
-    home: 'Cotton Home',
-    sample: 'sample ',
+    home: 'Emerald Home',
+    stores: 'Emerald Stores',
   },
   icon: {
     menu: 'reorder-horizontal',
     home: 'home',
-    sample: 'emoji-sad',
+    stores: 'store',
   },
   headerMode: 'center-aligned',
   iconColor: {

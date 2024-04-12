@@ -1,5 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import { Avatar, Text } from 'react-native-paper';
+import { Constants } from '../constants/constants';
 
 const LogoCard = ({ style }) => {
   const userData = {
@@ -16,7 +17,7 @@ const LogoCard = ({ style }) => {
         <Avatar.Text label={name} style={styles.avatarStyle} />
       )}
 
-      <Text variant="headlineLarge" children={'Cotton Home'}></Text>
+      <Text variant="headlineLarge" children={Constants.screen.home}></Text>
     </View>
   );
 };
