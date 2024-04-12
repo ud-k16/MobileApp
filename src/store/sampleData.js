@@ -1,4 +1,4 @@
-const SampleList = Object.freeze({
+export const SampleList = {
   emeraldData: [
     {
       name: '',
@@ -15,5 +15,12 @@ const SampleList = Object.freeze({
       description: '',
       websiteLink: '',
     },
+    {
+      name: '',
+      place: '',
+      imageUrl: '',
+      description: '',
+      websiteLink: '',
+    },
   ],
-});
+};

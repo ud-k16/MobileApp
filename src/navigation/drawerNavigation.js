@@ -2,7 +2,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { StyleSheet } from 'react-native';
 import BottomNavigation from './bottomNavigation';
 import { Constants } from '../constants/constants';
-import UserCard from '../components/logoCard';
 import DrawerContent from '../components/drawerContent';
 
 const Drawer = createDrawerNavigator();

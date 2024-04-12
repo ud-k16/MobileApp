@@ -5,6 +5,7 @@ import { Entypo, MaterialIcons } from '@expo/vector-icons';
 import HomeScreen from '../screens/homeScreen';
 import Header from './header';
 import { Constants } from '../constants/constants';
+import EmeraldStores from '../screens/storesScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,7 +34,7 @@ const BottomNavigation = () => {
   return (
     <Tab.Navigator screenOptions={({ route }) => screenOptions(route)}>
       <Tab.Screen name={Constants.screen.home} component={HomeScreen} />
-      <Tab.Screen name={Constants.screen.stores} component={NoInternet} />
+      <Tab.Screen name={Constants.screen.stores} component={EmeraldStores} />
     </Tab.Navigator>
   );
 };
