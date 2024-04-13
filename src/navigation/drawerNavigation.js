@@ -15,7 +15,7 @@ const DrawerNavigation = ({}) => {
     <Drawer.Navigator
       initialRouteName={Constants.screen.drawerHome}
       screenOptions={() => screenOptions}
-      drawerContent={() => <DrawerContent />}
+      drawerContent={(props) => <DrawerContent {...props} />}
     >
       <Drawer.Screen
         name={Constants.screen.drawerHome}

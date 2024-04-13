@@ -16,6 +16,11 @@ export const Constants = Object.freeze({
   iconColor: {
     black: 'black',
   },
+  backgroundColor: {
+    emeraldGreen: '#50C878',
+    greenVariant1: '#266135',
+    white: 'white',
+  },
   imageResizeMode: {
     contain: 'contain',
     cover: 'cover',
