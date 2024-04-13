@@ -13,8 +13,13 @@ const StoreCard = ({ storeData }) => {
     <Card
       mode="outlined"
       onPress={() => Linking.openURL(storeData.websiteLink)}
+      style={styles.borderStyle}
     >
-      <Card.Cover source={image} resizeMode={Constants.imageResizeMode.cover} />
+      <Card.Cover
+        source={image}
+        resizeMode={Constants.imageResizeMode.cover}
+        style={styles.borderStyle}
+      />
       <Card.Content>
         <Text variant={Constants.textVariant.headlineLarge}>
           {storeData.name}
@@ -30,6 +35,10 @@ const StoreCard = ({ storeData }) => {
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  borderStyle: {
+    borderRadius: 0,
+  },
+});
 
 export default StoreCard;

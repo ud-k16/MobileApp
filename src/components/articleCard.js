@@ -10,11 +10,12 @@ const ArticleCard = ({ articleData }) => {
     : require('../../assets/default.jpg');
 
   return (
-    <Card
-      mode="outlined"
-      onPress={() => Linking.openURL(articleData.websiteLink)}
-    >
-      <Card.Cover source={image} resizeMode={Constants.imageResizeMode.cover} />
+    <Card mode="outlined" style={styles.borderStyle}>
+      <Card.Cover
+        source={image}
+        resizeMode={Constants.imageResizeMode.cover}
+        style={styles.borderStyle}
+      />
       <Card.Content>
         <Text variant={Constants.textVariant.headlineLarge}>
           {articleData.name}
@@ -30,6 +31,10 @@ const ArticleCard = ({ articleData }) => {
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  borderStyle: {
+    borderRadius: 0,
+  },
+});
 
 export default ArticleCard;
