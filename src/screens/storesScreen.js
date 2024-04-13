@@ -1,12 +1,21 @@
 import { useContext } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
 import { StoreContext } from '../store/storeContext';
 import StoreCard from '../components/storeCard';
+import FlatListItemSeparator from '../components/flatListSeparator';
 const EmeraldStores = () => {
   const state = useContext(StoreContext);
 
-  return <StoreCard storeData={state.emeraldStore[0]} />;
+  const renderData = ({ item }) => <StoreCard storeData={item} />;
+  return (
+    <FlatList
+      data={state.emeraldStore}
+      key={(item, key) => key}
+      renderItem={renderData}
+      ItemSeparatorComponent={FlatListItemSeparator}
+    />
+  );
 };
 
 const styles = StyleSheet.create({});
