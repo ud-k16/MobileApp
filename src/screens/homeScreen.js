@@ -1,19 +1,24 @@
-import { StyleSheet, View } from 'react-native';
-import NoInternet from './noInternetScreen';
-import { useNetInfo } from '@react-native-community/netinfo';
+import { useContext } from 'react';
+import { FlatList, StyleSheet, View } from 'react-native';
+import { StoreContext } from '../store/storeContext';
+import FlatListItemSeparator from '../components/flatListSeparator';
+import ArticleCard from '../components/articleCard';
 
 const HomeScreen = () => {
-  const { isConnected } = useNetInfo();
-  return <View style={styles.container}>{!isConnected && <NoInternet />}</View>;
+  const state = useContext(StoreContext);
+
+  const renderData = ({ item }) => <ArticleCard articleData={item} />;
+
+  return (
+    <FlatList
+      data={state.emeraldData}
+      key={(item, key) => key}
+      renderItem={renderData}
+      ItemSeparatorComponent={FlatListItemSeparator}
+    />
+  );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const styles = StyleSheet.create({});
 
 export default HomeScreen;
