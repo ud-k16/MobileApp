@@ -2,10 +2,11 @@ import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
 import { StoreContext } from '../store/storeContext';
+import StoreCard from '../components/storeCard';
 const EmeraldStores = () => {
   const state = useContext(StoreContext);
-  console.log(state);
-  return <View></View>;
+
+  return <StoreCard storeData={state.emeraldStore[0]} />;
 };
 
 const styles = StyleSheet.create({});

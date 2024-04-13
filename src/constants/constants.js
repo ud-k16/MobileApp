@@ -16,4 +16,28 @@ export const Constants = Object.freeze({
   iconColor: {
     black: 'black',
   },
+  imageResizeMode: {
+    contain: 'contain',
+    cover: 'cover',
+  },
+  textVariant: {
+    titleLarge: 'titleLarge',
+    titleSmall: 'titleSmall',
+    titleMedium: 'titleMedium',
+    displayLarge: 'displayLarge',
+    displayMedium: 'displayMedium',
+    displaySmall: 'displaySmall',
+
+    headlineLarge: 'headlineLarge',
+    headlineMedium: 'headlineMedium',
+    headlineSmall: 'headlineSmall',
+
+    labelLarge: 'labelLarge',
+    labelMedium: 'labelMedium',
+    labelSmall: 'labelSmall',
+
+    bodyLarge: 'bodyLarge',
+    bodyMedium: 'bodyMedium',
+    bodySmall: 'bodySmall',
+  },
 });
