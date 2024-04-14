@@ -11,10 +11,12 @@ export const Constants = Object.freeze({
     menu: 'reorder-horizontal',
     home: 'home',
     stores: 'store',
+    error: 'report-gmailerrorred',
   },
   headerMode: 'center-aligned',
   iconColor: {
     black: 'black',
+    red: 'red',
   },
   backgroundColor: {
     emeraldGreen: '#50C878',
@@ -45,4 +47,5 @@ export const Constants = Object.freeze({
     bodyMedium: 'bodyMedium',
     bodySmall: 'bodySmall',
   },
+  offlinePreferenceComment: 'continue Offline',
 });

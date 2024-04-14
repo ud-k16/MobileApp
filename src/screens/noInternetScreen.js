@@ -1,14 +1,27 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Constants } from '../constants/constants';
-const NoInternet = () => {
+/**
+ * screen  that is displayed  on no interenet connection
+ */
+const NoInternet = ({ offline, setOffline }) => {
   return (
     <View style={styles.container}>
       <View style={styles.descriptionBlock}>
-        <MaterialIcons name="report-gmailerrorred" size={44} color="red" />
+        <MaterialIcons
+          name={Constants.icon.error}
+          size={44}
+          color={Constants.iconColor.red}
+        />
         <Text style={styles.textStyle}>{Constants.noInternet}</Text>
       </View>
-      <Button title={'continue Offline'} />
+      <Button
+        title={Constants.offlinePreferenceComment}
+        //on user preferring offline mode , offline flag is set
+        onPress={() => {
+          setOffline(!offline);
+        }}
+      />
     </View>
   );
 };

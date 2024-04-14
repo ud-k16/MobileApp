@@ -5,8 +5,9 @@ import FlatListItemSeparator from '../components/flatListSeparator';
 import ArticleCard from '../components/articleCard';
 
 const HomeScreen = () => {
+  //getting article data from context
   const state = useContext(StoreContext);
-
+//render function for each article
   const renderData = ({ item }) => <ArticleCard articleData={item} />;
 
   return (
