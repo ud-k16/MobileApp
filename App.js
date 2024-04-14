@@ -13,6 +13,8 @@ const App = () => {
   const { isConnected } = useNetInfo();
   //checking whether to render main component
   const rendermain = isConnected || offline;
+  //reverting offline flag on internet
+  isConnected && offline && setOffline(false);
   //on internet connection and offline flag is set original components are displayed
   return rendermain ? (
     <>

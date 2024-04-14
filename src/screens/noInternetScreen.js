@@ -19,7 +19,7 @@ const NoInternet = ({ offline, setOffline }) => {
         title={Constants.offlinePreferenceComment}
         //on user preferring offline mode , offline flag is set
         onPress={() => {
-          setOffline(!offline);
+          setOffline(true);
         }}
       />
     </View>
