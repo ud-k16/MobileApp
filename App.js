@@ -16,19 +16,20 @@ const App = () => {
   //reverting offline flag on internet
   isConnected && offline && setOffline(false);
   //on internet connection and offline flag is set original components are displayed
-  return rendermain ? (
-    <>
-      <Store>
-        <NavigationContainer>
-          <DrawerNavigation>
-            <BottomNavigation />
-          </DrawerNavigation>
-        </NavigationContainer>
-      </Store>
-    </>
-  ) : (
-    <NoInternet offline={offline} setOffline={setOffline} />
-  );
+  if (rendermain)
+    return rendermain ? (
+      <>
+        <Store>
+          <NavigationContainer>
+            <DrawerNavigation>
+              <BottomNavigation />
+            </DrawerNavigation>
+          </NavigationContainer>
+        </Store>
+      </>
+    ) : (
+      <NoInternet offline={offline} setOffline={setOffline} />
+    );
 };
 
 const styles = StyleSheet.create({});
