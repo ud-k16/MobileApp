@@ -4,20 +4,27 @@ import { Constants } from '../constants/constants';
 
 const LogoCard = ({ style }) => {
   const userData = {
-    name: 'C',
-    image: null,
+    name: 'EM',
+    image: require('../../assets/emerald.webp'),
   };
   const name = userData.name;
   const image = userData.image;
   return (
     <View style={style}>
       {image ? (
-        <Avatar.Image source={image} style={styles.avatarStyle} />
+        <Avatar.Image
+          source={image}
+          style={[styles.avatarStyle, styles.avatarImage]}
+          size={100}
+        />
       ) : (
         <Avatar.Text label={name} style={styles.avatarStyle} />
       )}
 
-      <Text variant="headlineLarge" children={Constants.screen.home}></Text>
+      <Text
+        variant={Constants.textVariant.headlineLarge}
+        children={Constants.screen.home}
+      ></Text>
     </View>
   );
 };
@@ -25,6 +32,10 @@ const LogoCard = ({ style }) => {
 const styles = StyleSheet.create({
   avatarStyle: {
     alignSelf: 'center',
+  },
+  avatarImage: {
+    resizeMode: 'cover',
+    backgroundColor: Constants.backgroundColor.white,
   },
 });
 

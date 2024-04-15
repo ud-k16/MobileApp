@@ -11,7 +11,7 @@ const StoreCard = ({ storeData }) => {
 
   return (
     <Card
-      mode="outlined"
+      mode="contained"
       onPress={() => Linking.openURL(storeData.websiteLink)}
       style={styles.borderStyle}
     >
