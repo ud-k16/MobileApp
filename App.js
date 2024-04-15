@@ -28,7 +28,7 @@ const App = () => {
         </Store>
       </>
     );
-  else <NoInternet offline={offline} setOffline={setOffline} />;
+  else return <NoInternet offline={offline} setOffline={setOffline} />;
 };
 
 const styles = StyleSheet.create({});
