@@ -17,7 +17,7 @@ const App = () => {
   isConnected && offline && setOffline(false);
   //on internet connection and offline flag is set original components are displayed
   if (rendermain)
-    return rendermain ? (
+    return (
       <>
         <Store>
           <NavigationContainer>
@@ -27,9 +27,8 @@ const App = () => {
           </NavigationContainer>
         </Store>
       </>
-    ) : (
-      <NoInternet offline={offline} setOffline={setOffline} />
     );
+  else <NoInternet offline={offline} setOffline={setOffline} />;
 };
 
 const styles = StyleSheet.create({});
